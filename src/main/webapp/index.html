@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sample pi4j spark Application</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="css/bootstrap.min-4.0.0.css" />
+    <link rel="stylesheet" href="css/application.css" />
+  </head>
+  <body bgcolor="white">
+
+    <div class="jumbotron text-center">
+      <h1>Java + spark + pi4j demo</h1>
+      <p>A demonstration of java controlling GPIO outputs on a Raspberry Pie,
+      based on the pi4j library and spark framework.</p>
+    </div>
+
+    <div ng-app="pi4jDemo" ng-controller="relayCtrl" class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-4"> <h3>Relay 1</h3> </div>
+            <div class="col-sm-3">
+              <a href="#" ng-click="onRelay1Click(); $event.stopPropagation()">
+                <img ng-src="{{
+                  relay1 ? 'images/power-on.png' : 'images/power-off.png'
+                }}"/>
+              </a>
+            </div>
+            <div class="col-sm-5"></div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+            <img ng-src="{{
+                relay1 ? 'images/relay_closed.png' : 'images/relay_open.png'
+            }}"/>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-4"> <h3>Relay 2</h3> </div>
+            <div class="col-sm-3">
+              <a ng-href="#"
+                ng-click="onRelay2Click($event); $event.stopPropagation()"
+              >
+                <img ng-src="{{
+                    relay2 ? 'images/power-on.png' : 'images/power-off.png'
+                }}"/>
+              </a>
+            </div>
+            <div class="col-sm-5"></div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <img ng-src="{{
+              relay2 ? 'images/relay_closed.png' : 'images/relay_open.png'
+          }}"/>
+        </div>
+      </div>
+      <div class="errorMsg" ng-show="showError">{{errorMessage}}</div>
+    </div>
+  </body>
+</html>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/bootstrap.min-4.0.0.js"></script>
+<script src="js/angular.min-1.6.9.js"></script>
+
+<script src="scripts/application.js"></script>
+
+

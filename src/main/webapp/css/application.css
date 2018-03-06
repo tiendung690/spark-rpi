@@ -1,0 +1,8 @@
+div.errorMsg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 40em;
+    height: 3ex;
+    background-color: HotPink;
+}
